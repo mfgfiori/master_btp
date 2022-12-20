@@ -1,0 +1,16 @@
+unmanaged implementation in class zbp_i_hc_master_2114 unique;
+//strict ( 2 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for z_i_hc_master_2114 alias HCMaster
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  field( readonly ) ENumber;
+  field( mandatory :create ) EName;
+
+  create;
+  update;
+  delete;
+}
